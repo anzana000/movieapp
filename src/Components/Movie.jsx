@@ -1,16 +1,36 @@
 import React from "react";
+import Favourites from "./Favourites";
+import MovieCard from "./MovieCard";
 
-const Movie = ({ movie }) => {
+const Movie = ({
+  movie,
+  addToFavourites,
+  text,
+  iconclass,
+  removeFromFavourites,
+}) => {
   console.log("inside movie", movie);
   return (
-    <div className="m-2 relative cursor-pointer movie-card">
-      <img src={movie.Poster} alt={movie.Title} className=" movie-poster" />
-      <p className="text-slate-400">Released year: {movie.Year}</p>
-      <div className="absolute top-0 bottom-0 right-0 left-0 bg-black opacity-70 w-full h-full hidden justify-center items-center gap-2 overlay">
-        <p className="text-white ">Add to favourites</p>
-        {/* <i className="fa-regular fa-heart text-white hover:text-red-700"></i> */}
-        <i class="fa-solid fa-heart text-white hover:text-red-600"></i>
+    <div
+      className="m-2 relative   movie-card"
+      onClick={() =>
+        text === "Add to favourites"
+          ? addToFavourites(movie)
+          : removeFromFavourites(movie.id)
+      }
+    >
+      <MovieCard
+        poster={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+      />
+      <div className="flex justify-between mt-2 ">
+        <p className="text-white">{movie.release_date}</p>
+        <p className="text-white">
+          {Math.round(movie.vote_average)}{" "}
+          <i className="fa-solid fa-star text-yellow-500"></i>
+        </p>
       </div>
+
+      <Favourites text={text} iconclass={iconclass} />
     </div>
   );
 };

@@ -16,3 +16,16 @@
   display: flex;
   transition: 0.3s ease;
 }
+
+.popular {
+  width: 300px;
+}
+
+.popular-img {
+  height: 300px;
+}
+
+.moviecard {
+  height: 300px;
+  width: 300px;
+}
