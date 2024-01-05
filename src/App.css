@@ -1,31 +1,24 @@
-.movie-poster {
+/* .movie-poster {
   width: 300px;
   height: 300px;
   object-fit: cover;
-}
-
-.input-field {
-  outline: none;
-  border: none;
-  padding: 5px 10px;
-  width: 300px;
-  border-radius: 4px;
-}
+} */
 
 .movie-card:hover .overlay {
   display: flex;
   transition: 0.3s ease;
 }
 
-.popular {
-  width: 300px;
+.slick-list {
+  width: 95vw;
 }
 
-.popular-img {
-  height: 300px;
-}
-
-.moviecard {
-  height: 300px;
-  width: 300px;
+@media screen and (max-width: 500px) {
+  .slick-next:before,
+  .slick-prev:before {
+    content: "";
+  }
+  .app {
+    overflow: hidden;
+  }
 }

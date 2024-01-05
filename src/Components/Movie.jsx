@@ -8,11 +8,12 @@ const Movie = ({
   text,
   iconclass,
   removeFromFavourites,
+  id,
 }) => {
-  console.log("inside movie", movie);
+  console.log(" movieeeee", movie);
   return (
     <div
-      className="m-2 relative   movie-card"
+      className="m-2 relative movie-card"
       onClick={() =>
         text === "Add to favourites"
           ? addToFavourites(movie)
@@ -21,6 +22,8 @@ const Movie = ({
     >
       <MovieCard
         poster={`https://image.tmdb.org/t/p/w300/${movie.poster_path}`}
+        movie={movie}
+        id={id}
       />
       <div className="flex justify-between mt-2 ">
         <p className="text-white">{movie.release_date}</p>
