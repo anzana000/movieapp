@@ -21,4 +21,7 @@
   .app {
     overflow: hidden;
   }
+  .movie-card {
+    width: 100%;
+  }
 }

@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Movie from "../Components/Movie";
 import Popular from "../Components/Popular";
 import Upcoming from "../Components/Upcoming";
-import Favourite from "../Components/Favourite";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -119,7 +118,7 @@ function Home() {
   };
 
   return (
-    <div className=" p-2 sm:p-6 flex flex-col justify-center items-start app ">
+    <main className=" p-2 sm:p-6 flex flex-col justify-center items-start app ">
       <div className="flex flex-col sm:flex-row w-full justify-between mt-5 ">
         <h1 className="text-xl text-white font-semibold uppercase ">
           Movie App
@@ -165,6 +164,7 @@ function Home() {
                 key={upc.id}
                 imgsrc={upc.poster_path}
                 date={upc.release_date}
+                movie={upc}
               />
             );
           })}
@@ -185,6 +185,7 @@ function Home() {
                 imgsrc={popular.poster_path}
                 votes={popular.vote_count}
                 popularity={popular.popularity}
+                movie={popular}
               />
             );
           })}
@@ -212,7 +213,7 @@ function Home() {
           })
         )}
       </div>
-    </div>
+    </main>
   );
 }
 

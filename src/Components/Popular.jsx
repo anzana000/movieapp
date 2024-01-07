@@ -1,7 +1,7 @@
 import React from "react";
 import MovieCard from "./MovieCard";
 
-const Popular = ({ imgsrc, title, popularity, votes }) => {
+const Popular = ({ imgsrc, title, popularity, votes, movie }) => {
   return (
     <div className="flex flex-col sm:w-[300px] ">
       {/* <img
@@ -9,7 +9,11 @@ const Popular = ({ imgsrc, title, popularity, votes }) => {
         alt={title}
         className="w-full object-cover rounded-md popular-img"
       /> */}
-      <MovieCard poster={`https://image.tmdb.org/t/p/w300/${imgsrc}`} />
+      <MovieCard
+        poster={`https://image.tmdb.org/t/p/w300/${imgsrc}`}
+        movie={movie}
+        id={movie.id}
+      />
       <div className="flex justify-between  mt-2 w-full">
         <p className="text-white">
           {votes}

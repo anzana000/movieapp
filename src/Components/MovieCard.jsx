@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const MovieCard = ({ poster, movie, id }) => {
-  console.log("Movie card detailsssssss", movie);
+  // console.log("Movie card detailsssssss", movie);
+  console.log("movie", movie);
 
   return (
     <div className="sm:w-[300px] sm:h-[300px] w-[100%] h-[300px] ">
@@ -10,8 +11,6 @@ const MovieCard = ({ poster, movie, id }) => {
         // to={{ pathname: `/detail/${id}`, state: { movie } }}
         to={`/detail/${id}`}
         state={{ movie }}
-        target="_blank"
-        rel="noopener noreferrer"
       >
         <img
           src={poster}

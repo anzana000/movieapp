@@ -13,7 +13,7 @@ const Movie = ({
   console.log(" movieeeee", movie);
   return (
     <div
-      className="m-2 relative movie-card"
+      className="m-2 relative movie-card "
       onClick={() =>
         text === "Add to favourites"
           ? addToFavourites(movie)
